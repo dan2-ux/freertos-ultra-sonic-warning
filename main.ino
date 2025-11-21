@@ -75,6 +75,10 @@ void warning(void* parameter){
         else if (dis > 5) delayTime = 100;
         else if (dis > 2) delayTime = 70;
       }
+      else{
+        lcd.setCursor(5, 3);
+        lcd.printf("      ");
+      }
 
       if(xTimerIsTimerActive(timer) == pdFALSE){
         xTimerChangePeriod(timer, delayTime / portTICK_PERIOD_MS, portMAX_DELAY);
